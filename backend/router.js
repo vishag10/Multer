@@ -14,6 +14,11 @@ const storage = multer.diskStorage({
 
 
 const router=Router();
-router.route("/adduser").post(upload.array('file',15),rh.addUser)
+// router.route("/adduser").post(upload.array('file',15),rh.addUser)
+router.route("/adduser").post(upload.single('file'),rh.addUser)
+router.route("/getusers").get(rh.getUser)
+router.route("/image/:filename").get(rh.loadImage)
+router.route("/delete/:_id").delete(rh.deleteUser)
+router.route("/update/:_id").put(rh.updateUser)
 
 module.exports=router;

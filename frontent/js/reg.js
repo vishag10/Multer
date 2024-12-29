@@ -8,6 +8,7 @@ document.getElementById("form").addEventListener("submit", (e)=>{
         body:data
     }).then((res)=>{
         console.log(res);
+        window.location="../index.html"
         
     }).catch((err)=>{
         console.log(err);

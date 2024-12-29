@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reg.css">
+</head>
+<body>
+    <body>
+        <div class="main">
+            <div class="form">
+                <a href="../index.html" class="link">Get Users</a>
+                <center><h1>edit information    </h1></center>
+                <form action="" id="form"  >
+                    <span>email</span><br>
+                    <input type="text" name="email" required><br>
+                    <span>username</span><br>
+                    <input type="text" name="username" required><br>
+                    <span>profile image</span><br>
+                    <div class="img2">
+                        <img src="" alt="">
+                    </div>
+                    <input type="file" name="file" multiple><br>
+                    <span>phone</span><br>
+                    <input type="text" name="phone" required><br>
+                    <button>submit</button>
+    
+                </form>
+                <center><p>2024 Your Company</p></center>
+            </div>
+    
+        </div>
+    
+        <script>
+            
+            const userId = new URLSearchParams(window.location.search).get('id');
+            console.log(userId);
+            
+            async function update(_id){
+                const res=await fetch(`http://localhost:3000/api/update/${_id}`,{method:"PUT"});
+                console.log(res);
+                const user=await res.json();
+                console.log(user);
+
+               document.getElementById("form").innerHTML=`
+                   <span>email</span><br>
+                    <input type="text" value=${user.email} name="email" required><br>
+                    <span>username</span><br>
+                    <input type="text" value=${user.username} name="username" required><br>
+                    <span>profile image</span><br>
+                     <div class="img2">
+                        <img src="http://localhost:3000/api/image/${user.file.filename}" alt="">
+                    </div>
+                    <input type="file" name="file" multiple><br>
+                    <span>phone</span><br>
+                    <input type="text" value=${user.phone} name="phone" required><br>
+                    <button>submit</button>`
+            }
+            update(userId);
+
+        </script>
+    </body> 
+</body>
+</html>

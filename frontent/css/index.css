@@ -21,10 +21,75 @@ span{
     margin-right: 3%;
 }
 button{
-    width: 100px;
-    height: 30px;
+    width: 120px;
+    height: 40px;
     background-color: #333333;
     color: #f2f2f2;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #555555;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #111111;
+    transform: scale(0.95);
+}
+
+.session1{
+    width: 100%;
+
+}
+.container{
+    padding-top: 3%;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: auto;
+   
+    gap: 20px;
+}
+.card{
+    
+    width: 25%;
+    height: auto;
+    background-color: white;
+    border: 1px solid #333333;
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+.img{
+    width: 100%;
+    height: 250px;
+
+}
+.img>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.content>h6{
+    font-size: 15px;
+    line-height: 10px;
+    margin-left: 3%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+
+}
+.content>h5{
+    font-size: 17px;
+    line-height: 10px;
+    margin-left: 3%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #777777;
 }
